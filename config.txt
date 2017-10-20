@@ -1,0 +1,32 @@
+security-object network_five
+security-object network_five security protocol-suite wpa2-aes-psk ascii-key ***
+security-object network_five default-user-profile-attr 5
+security-object network_six
+security-object network_six security protocol-suite wpa2-aes-psk ascii-key ***
+security-object network_six default-user-profile-attr 6
+ssid network_five
+ssid network_five security-object network_five
+ssid network_one 11g-rate-set 18-basic 24 36 48 54
+ssid network_six
+ssid network_six security-object network_six
+ssid network_six hide-ssid
+ssid network_six 11g-rate-set 18-basic 24 36 48 54
+hive home
+hive home password ***
+interface wifi1 radio channel 36
+interface mgt0 hive home
+interface wifi0 ssid network_one
+interface wifi1 ssid network_one
+interface wifi0 ssid network_two
+interface wifi1 ssid network_two
+hostname AP01
+interface mgt0 ip 192.168.1.200 255.255.255.0
+ip route net 0.0.0.0 0.0.0.0 gateway 192.168.1.1
+no interface mgt0 dhcp client
+dns server-ip 208.67.220.222
+dns server-ip 208.67.220.220 second
+ntp server nl.pool.ntp.org
+clock time-zone 2
+no capwap client enable
+user-profile network_five qos-policy def-user-qos vlan-id 5 attribute 5
+user-profile network_six qos-policy def-user-qos vlan-id 6 attribute 6
