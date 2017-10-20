@@ -7,6 +7,7 @@ security-object network_six default-user-profile-attr 6
 ssid network_five
 ssid network_five security-object network_five
 ssid network_five 11g-rate-set 18-basic 24 36 48 54
+no ssid network_five inter-station-traffic
 ssid network_six
 ssid network_six security-object network_six
 ssid network_six hide-ssid
