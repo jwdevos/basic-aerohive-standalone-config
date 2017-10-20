@@ -15,10 +15,10 @@ hive home
 hive home password ***
 interface wifi1 radio channel 36
 interface mgt0 hive home
-interface wifi0 ssid network_one
-interface wifi1 ssid network_one
-interface wifi0 ssid network_two
-interface wifi1 ssid network_two
+interface wifi0 ssid network_five
+interface wifi1 ssid network_five
+interface wifi0 ssid network_six
+interface wifi1 ssid network_six
 hostname AP01
 interface mgt0 ip 192.168.1.200 255.255.255.0
 ip route net 0.0.0.0 0.0.0.0 gateway 192.168.1.1
